@@ -1,0 +1,462 @@
+[
+ {
+  "categorie": "modele",
+  "id": "colline",
+  "fichiers": [
+   "assets/modeles/colline-bureau.glb",
+   "assets/modeles/colline-telephone.glb",
+   "assets/modeles/colline-emprise.json"
+  ],
+  "titre": "Hill Complex, modèle photogrammétrique : hillcomplex_whole_medium.zip (Whole_650.dae, Whole_650.jpg)",
+  "auteur": "Daniel Löwenborg et Ezekia Mtetwa (Université d'Uppsala)",
+  "licence": "CC BY 4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://zenodo.org/records/22830280",
+  "clauses": [],
+  "modifications": "recalé sur le relief Zenodo (rotation, échelle, translation), allégé (meshopt), texture réduite et réorganisée en atlas, bord ramené vers le sol sur 12 m et prolongé d’une jupe de 6 m, un abri moderne de la cour de l’enceinte Ouest effacé (géométrie aplatie, texture repeinte) ; à l’affichage, ombres de la photo adoucies et teinte neutralisée (src/scene/colline.js)",
+  "note": "Colline royale (Hill Complex), état du relevé par drone de juillet 2016, recalée dans le repère du site."
+ },
+ {
+  "categorie": "relief",
+  "id": "relief-site",
+  "fichiers": [
+   "assets/terrain/sol.bin",
+   "assets/terrain/couleur.jpg",
+   "assets/terrain/couches.png",
+   "assets/terrain/arbres.bin",
+   "assets/terrain/relief.json"
+  ],
+  "titre": "Great Zimbabwe : relief (GZ_valley_dem_wgs84.tif) et orthophoto (GZ_Valley_Orthophoto_wgs84.jpg), relevé par drone de juillet 2016",
+  "auteur": "Daniel Löwenborg et Ezekia Mtetwa (Université d'Uppsala)",
+  "licence": "CC BY 4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://zenodo.org/records/22830280",
+  "clauses": [],
+  "modifications": "Sol nu tiré du modèle de surface Zenodo (19 cm) : filtre morphologique progressif (Pingel et al. 2013), arbres, murs, toits et bosquets repérés aussi par l'orthophoto, trous comblés en harmonique ; bosses et creux de moins de 5 m écrêtés à 0,15 m et touffes d'herbe lissées (σ 1,5 m) hors de la roche ; grille de 1 m. Au-delà du relevé : SRTM ramené au relevé (écart en plan 102.1 + 0.00253 x + 0.08200 z, résidu médian 2.5 m), fondu de 15 à 120 m du bord. Couleur du sol : orthophoto sans arbres, murs, toits ni ombres (comblée par les sols voisins), lissée.",
+  "note": "Sol nu, couleur du sol, couches (roche, chemins) et arbres relevés."
+ },
+ {
+  "categorie": "relief",
+  "id": "relief-lointain",
+  "fichiers": [
+   "assets/terrain/proche.bin",
+   "assets/terrain/lointain.bin"
+  ],
+  "titre": "AWS Terrain Tiles (Terrarium), z13 x 4797–4801 y 4565–4569 (25 tuiles) et z11 x 1198–1201 y 1139–1143 (20 tuiles)",
+  "auteur": "Mapzen ; SRTM data courtesy of the U.S. Geological Survey",
+  "licence": "Données libres d'usage avec attribution obligatoire",
+  "licenceUrl": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+  "source": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "Mapzen ; SRTM data courtesy of the U.S. Geological Survey ; relief et orthophoto du site : Löwenborg et Mtetwa, Université d'Uppsala, CC BY 4.0",
+  "clauses": [
+   "Attribution à afficher : « Mapzen ; SRTM data courtesy of the U.S. Geological Survey ; relief et orthophoto du site : Löwenborg et Mtetwa, Université d'Uppsala, CC BY 4.0 »"
+  ],
+  "modifications": "grilles de 24 et 96 m ramenées au relevé (voir relief.json, « bascule ») ; à la lecture, nœuds aberrants à plus de 150 m de la médiane de leurs voisins remplacés par cette médiane (src/rendu/terrain.js)",
+  "note": ""
+ },
+ {
+  "categorie": "restitution",
+  "id": "grande-enceinte",
+  "fichiers": [
+   "src/scene/enceinte.js",
+   "docs/enceinte-plan.json"
+  ],
+  "titre": "Grande Enceinte et murs de la vallée (murs restitués)",
+  "auteur": "Visite du Grand Zimbabwe (src/scene/enceinte.js)",
+  "licence": "Création originale du projet, sans élément tiers (aucune licence libre déclarée)",
+  "licenceUrl": null,
+  "source": "https://zenodo.org/records/22830280",
+  "clauses": [],
+  "modifications": "aucune : création du projet",
+  "note": "Tracés et hauteurs mesurés sur : Great_Enclosure.obj, Löwenborg et Mtetwa, Université d'Uppsala, Zenodo 22830280, CC BY 4.0 (25,7 M points, recalé sur le relief : voir calageNuage) ; GZ_valley_dem_wgs84.tif, même dépôt, CC BY 4.0, pas de 19 cm ; R. N. Hall, Great Zimbabwe, Mashonaland, Rhodesia, Methuen 1905 (domaine public, Project Gutenberg 62501), chap. IX à XIII : tables de mesures du mur principal, tour conique, passage étroit. Mesures seules : ses interprétations (bâtisseurs étrangers) sont fausses. ; Plan of great enclosure (1906), domaine public, Wikimedia Commons, calé sur le relief (écart moyen tronqué 0,77 m)."
+ },
+ {
+  "categorie": "restitution",
+  "id": "huttes",
+  "fichiers": [
+   "src/scene/huttes.js",
+   "src/data/implantation.js"
+  ],
+  "titre": "Huttes de daga et de chaume (restitution, hypothèse)",
+  "auteur": "Visite du Grand Zimbabwe (src/scene/huttes.js)",
+  "licence": "Création originale du projet, sans élément tiers (aucune licence libre déclarée)",
+  "licenceUrl": null,
+  "source": "https://zenodo.org/records/22830280",
+  "clauses": [],
+  "modifications": "aucune : création du projet",
+  "note": "Sols et bases attestés ; murs, portes et toits de chaume sont une hypothèse (huttes shona actuelles, huttes restituées près du musée, photo drone Zenodo) ; sources par cote dans src/scene/huttes.js."
+ },
+ {
+  "categorie": "restitution",
+  "id": "oiseaux",
+  "fichiers": [
+   "assets/modeles/oiseaux.glb"
+  ],
+  "titre": "Six oiseaux de stéatite sur leurs colonnes (sculptures restituées)",
+  "auteur": "Visite du Grand Zimbabwe (outils/sculpter-oiseau.mjs)",
+  "licence": "Création originale du projet, sans élément tiers (aucune licence libre déclarée)",
+  "licenceUrl": null,
+  "source": null,
+  "clauses": [],
+  "modifications": "aucune : création du projet",
+  "note": "Six oiseaux de stéatite de l'enceinte Est, sculptures restituées (champ de distance maillé) d'après Huffman 1995, Dewey 2006, les gravures de Bent (1892) et la photo de Hall et Neal (1902), domaine public. Posés par src/scene/oiseaux.js. Échelle : oiseau ≈ 33 cm, colonne et oiseau ≈ 1,6 m (Dewey 2006), colonne ≈ 14 cm de diamètre (fragment de Berlin)."
+ },
+ {
+  "categorie": "texture",
+  "id": "bois",
+  "fichiers": [
+   "assets/textures/bois/arm.webp",
+   "assets/textures/bois/couleur.webp",
+   "assets/textures/bois/normale.webp"
+  ],
+  "titre": "bark_willow_02",
+  "auteur": "Charlotte Baglioni (Poly Haven)",
+  "licence": "CC0 1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source": "https://polyhaven.com/a/bark_willow_02",
+  "clauses": [],
+  "modifications": "réduit à 512 px, recoloré en bois gris-brun sec ; fil le long de v",
+  "note": "Taille du motif : 1 m."
+ },
+ {
+  "categorie": "texture",
+  "id": "chaume",
+  "fichiers": [
+   "assets/textures/chaume/arm.webp",
+   "assets/textures/chaume/couleur.webp",
+   "assets/textures/chaume/normale.webp"
+  ],
+  "titre": "reed_roof_04",
+  "auteur": "Rob Tuytel (Poly Haven)",
+  "licence": "CC0 1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source": "https://polyhaven.com/a/reed_roof_04",
+  "clauses": [],
+  "modifications": "faîtage coupé, tuile raccordée en hauteur (fondu de 96 lignes), recolorée en herbe sèche dorée et grise ; fibres le long de v",
+  "note": "Taille du motif : 1.5 m."
+ },
+ {
+  "categorie": "texture",
+  "id": "daga",
+  "fichiers": [
+   "assets/textures/daga/arm.webp",
+   "assets/textures/daga/couleur.webp",
+   "assets/textures/daga/normale.webp"
+  ],
+  "titre": "clay_plaster",
+  "auteur": "Amal Kumar (Poly Haven)",
+  "licence": "CC0 1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source": "https://polyhaven.com/a/clay_plaster",
+  "clauses": [],
+  "modifications": "recoloré en ocre rouge-brun (daga : sable granitique et argile), contraste du grain renforcé",
+  "note": "Taille du motif : 2 m."
+ },
+ {
+  "categorie": "texture",
+  "id": "granite",
+  "fichiers": [
+   "assets/textures/granite/arm.webp",
+   "assets/textures/granite/couleur.webp",
+   "assets/textures/granite/normale.webp"
+  ],
+  "titre": "rock_08",
+  "auteur": "Rob Tuytel (Poly Haven)",
+  "licence": "CC0 1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source": "https://polyhaven.com/a/rock_08",
+  "clauses": [],
+  "modifications": "grain de rock_08 ramené au gris clair du granite (taches de plus de 12 cm aplanies), patine ocre, lichens gris-vert et orangés dessinés sur la forme des lichens de lichen_rock ; rugosité ramenée à 0,72–0,95. Taille réelle de rock_08 : 1,5 m, posée ici à 1 m (grain plus fin, à l'échelle des moellons). ; mêlé à lichen_rock de Rico Cilliers (Poly Haven), CC0 1.0 (forme des plaques de lichen)",
+  "note": "Taille du motif : 1 m."
+ },
+ {
+  "categorie": "texture",
+  "id": "herbe",
+  "fichiers": [
+   "assets/textures/herbe/arm.webp",
+   "assets/textures/herbe/couleur.webp",
+   "assets/textures/herbe/normale.webp"
+  ],
+  "titre": "grass_ground",
+  "auteur": "Charlotte Baglioni (Poly Haven)",
+  "licence": "CC0 1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source": "https://polyhaven.com/a/grass_ground",
+  "clauses": [],
+  "modifications": "herbe verte recolorée en herbe sèche d'hiver austral (paille, gris-brun)",
+  "note": "Taille du motif : 2.5 m."
+ },
+ {
+  "categorie": "texture",
+  "id": "sol",
+  "fichiers": [
+   "assets/textures/sol/arm.webp",
+   "assets/textures/sol/couleur.webp",
+   "assets/textures/sol/normale.webp"
+  ],
+  "titre": "baseball_playground",
+  "auteur": "Guillaume Monsergent (Poly Haven)",
+  "licence": "CC0 1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source": "https://polyhaven.com/a/baseball_playground",
+  "clauses": [],
+  "modifications": "sable tassé recoloré en orange-brun (arène granitique des chemins, photo 10), mêlé (≈ 20 %, plaques fondues) à de l'herbe rase recolorée en paille ; mêlé à grass_ground de Charlotte Baglioni (Poly Haven), CC0 1.0 (herbe rase mêlée à la terre)",
+  "note": "Taille du motif : 4 m."
+ },
+ {
+  "categorie": "texture",
+  "id": "steatite",
+  "fichiers": [
+   "assets/textures/steatite/arm.webp",
+   "assets/textures/steatite/couleur.webp",
+   "assets/textures/steatite/normale.webp"
+  ],
+  "titre": "rock_01",
+  "auteur": "Rob Tuytel (Poly Haven)",
+  "licence": "CC0 1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source": "https://polyhaven.com/a/rock_01",
+  "clauses": [],
+  "modifications": "réduit à 512 px, recoloré en gris-vert (stéatite), rugosité 0,4–0,62 (satiné)",
+  "note": "Taille du motif : 0.75 m."
+ },
+ {
+  "categorie": "ciel",
+  "id": "apres-midi-1k",
+  "fichiers": [
+   "assets/ciel/apres-midi-1k.hdr"
+  ],
+  "titre": "qwantani_late_afternoon_puresky",
+  "auteur": "Greg Zaal (photo), Jarod Guest (traitement), Poly Haven",
+  "licence": "CC0 1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source": "https://polyhaven.com/a/qwantani_late_afternoon_puresky",
+  "clauses": [],
+  "modifications": "aucune (fichier .hdr renommé)",
+  "note": "Qwantani, Drakensberg (Afrique du Sud) ; hauteur ≈ 19° (mesurée par chargerCiel)"
+ },
+ {
+  "categorie": "photo",
+  "id": "01-vallee-drone-2016",
+  "fichiers": [
+   "assets/photos/01-vallee-drone-2016.jpg"
+  ],
+  "titre": "La Grande Enceinte au premier plan, la vallée, puis la colline royale, vues par drone (juillet 2016)",
+  "auteur": "Daniel Löwenborg et Ezekia Mtetwa (Université d’Uppsala)",
+  "licence": "CC BY 4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://zenodo.org/records/22830280",
+  "attribution": "Daniel Löwenborg et Ezekia Mtetwa (Université d’Uppsala), CC BY 4.0, via Zenodo",
+  "clauses": [],
+  "modifications": "réduite à 1920 px de large, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "02-colline-enceinte-ouest",
+  "fichiers": [
+   "assets/photos/02-colline-enceinte-ouest.jpg"
+  ],
+  "titre": "Sur la colline royale : murs de pierre sèche appuyés aux blocs de granite",
+  "auteur": "Fanny Schertzer",
+  "licence": "CC BY 3.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Hill_Complex_-_Great_Zimbabwe_(2).jpg",
+  "attribution": "Fanny Schertzer, CC BY 3.0, via Wikimedia Commons",
+  "clauses": [],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "03-colline-vue-du-pied",
+  "fichiers": [
+   "assets/photos/03-colline-vue-du-pied.jpg"
+  ],
+  "titre": "La colline royale vue d’en bas : les murs couronnent la falaise de granite",
+  "auteur": "Andrew Moore (Flickr)",
+  "licence": "CC BY-SA 2.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Great_Zimbabwe_Hill_Complex.jpg",
+  "attribution": "Andrew Moore (Flickr), CC BY-SA 2.0, via Wikimedia Commons",
+  "clauses": [
+   "SA : toute adaptation doit être diffusée sous la même licence"
+  ],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "04-enceinte-est-sacree",
+  "fichiers": [
+   "assets/photos/04-enceinte-est-sacree.jpg"
+  ],
+  "titre": "Une enceinte de la colline royale, nommée « enceinte sacrée » par la photographe, sans doute l’enceinte Est",
+  "auteur": "Fanny Schertzer",
+  "licence": "CC BY 3.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Sacred_enclosure_%E2%80%93_Great_Zimbabwe.jpg",
+  "attribution": "Fanny Schertzer, CC BY 3.0, via Wikimedia Commons",
+  "clauses": [],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "06-grande-enceinte-entree-ouest",
+  "fichiers": [
+   "assets/photos/06-grande-enceinte-entree-ouest.jpg"
+  ],
+  "titre": "L’entrée ouest de la Grande Enceinte, restaurée avec son linteau",
+  "auteur": "Andrew Moore (Flickr)",
+  "licence": "CC BY-SA 2.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Western_Entrance_to_the_Great_Enclosure_-_Great_Zimbabwe_II_(46698655045).jpg",
+  "attribution": "Andrew Moore (Flickr), CC BY-SA 2.0, via Wikimedia Commons",
+  "clauses": [
+   "SA : toute adaptation doit être diffusée sous la même licence"
+  ],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "07-grande-enceinte-mur-exterieur",
+  "fichiers": [
+   "assets/photos/07-grande-enceinte-mur-exterieur.jpg"
+  ],
+  "titre": "Un mur de la Grande Enceinte de près : blocs de granite posés à sec, sans mortier, couverts de lichens",
+  "auteur": "Fanny Schertzer",
+  "licence": "CC BY 3.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Great_inclosure_-_Great_Zimbabwe_(14).jpg",
+  "attribution": "Fanny Schertzer, CC BY 3.0, via Wikimedia Commons",
+  "clauses": [],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "08-passage-etroit",
+  "fichiers": [
+   "assets/photos/08-passage-etroit.jpg"
+  ],
+  "titre": "Le passage étroit, entre le mur extérieur et le mur intérieur",
+  "auteur": "Andrew Moore (Flickr)",
+  "licence": "CC BY-SA 2.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Narrow_Passage_II_(47614146561).jpg",
+  "attribution": "Andrew Moore (Flickr), CC BY-SA 2.0, via Wikimedia Commons",
+  "clauses": [
+   "SA : toute adaptation doit être diffusée sous la même licence"
+  ],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "09-passage-etroit-paysage",
+  "fichiers": [
+   "assets/photos/09-passage-etroit-paysage.jpg"
+  ],
+  "titre": "Le passage étroit : deux murs courbes, à peine la place de marcher",
+  "auteur": "Andrew Moore (Flickr)",
+  "licence": "CC BY-SA 2.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Narrow_Passage_II_(32671690287).jpg",
+  "attribution": "Andrew Moore (Flickr), CC BY-SA 2.0, via Wikimedia Commons",
+  "clauses": [
+   "SA : toute adaptation doit être diffusée sous la même licence"
+  ],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "10-tour-conique",
+  "fichiers": [
+   "assets/photos/10-tour-conique.jpg"
+  ],
+  "titre": "La tour conique dans la Grande Enceinte",
+  "auteur": "Fanny Schertzer",
+  "licence": "CC BY 3.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Conical_tower_%E2%80%93_Great_Zimbabwe.jpg",
+  "attribution": "Fanny Schertzer, CC BY 3.0, via Wikimedia Commons",
+  "clauses": [],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "11-tour-conique-et-petite-tour",
+  "fichiers": [
+   "assets/photos/11-tour-conique-et-petite-tour.jpg"
+  ],
+  "titre": "La tour conique et les murs qui l’entourent",
+  "auteur": "Andrew Moore (Flickr)",
+  "licence": "CC BY-SA 2.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Conical_Tower_-_Great_Enclosure_III_(33736918448).jpg",
+  "attribution": "Andrew Moore (Flickr), CC BY-SA 2.0, via Wikimedia Commons",
+  "clauses": [
+   "SA : toute adaptation doit être diffusée sous la même licence"
+  ],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "12-mur-1975",
+  "fichiers": [
+   "assets/photos/12-mur-1975.jpg"
+  ],
+  "titre": "Le Grand Zimbabwe en 1975, cinq ans avant l’indépendance : une tour et le mur de la Grande Enceinte",
+  "auteur": "Aart Rietveld (ASC Leiden)",
+  "licence": "CC BY-SA 4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:ASC_Leiden_-_Rietveld_Collection_-_East_Africa_1975_-_05_-_033_-_A_wall_of_the_ruins_of_Great_Zimbabwe_-_Masvingo,_Zimbabwe.jpg",
+  "attribution": "Aart Rietveld (ASC Leiden), CC BY-SA 4.0, via Wikimedia Commons",
+  "clauses": [
+   "SA : toute adaptation doit être diffusée sous la même licence"
+  ],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "13-vue-depuis-la-colline",
+  "fichiers": [
+   "assets/photos/13-vue-depuis-la-colline.jpg"
+  ],
+  "titre": "Le site vu d’avion : la colline royale au premier plan, la vallée et la Grande Enceinte au loin",
+  "auteur": "Janice Bell",
+  "licence": "CC BY-SA 4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Great-zim-aerial-looking-SE.JPG",
+  "attribution": "Janice Bell, CC BY-SA 4.0, via Wikimedia Commons",
+  "clauses": [
+   "SA : toute adaptation doit être diffusée sous la même licence"
+  ],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ },
+ {
+  "categorie": "photo",
+  "id": "14-grande-enceinte-depuis-la-colline",
+  "fichiers": [
+   "assets/photos/14-grande-enceinte-depuis-la-colline.jpg"
+  ],
+  "titre": "La Grande Enceinte et les ruines de la vallée vues d’avion, vers l’ouest",
+  "auteur": "Janice Bell",
+  "licence": "CC BY-SA 4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Great-zim-aerial-looking-West.JPG",
+  "attribution": "Janice Bell, CC BY-SA 4.0, via Wikimedia Commons",
+  "clauses": [
+   "SA : toute adaptation doit être diffusée sous la même licence"
+  ],
+  "modifications": "vignette 1920 px, non retouchée",
+  "note": ""
+ }
+]

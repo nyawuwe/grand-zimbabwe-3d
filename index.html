@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Grand Zimbabwe · La colline, la vallée et la Grande Enceinte</title>
+  <meta name="description" content="Visite guidée en 3D du Grand Zimbabwe, de la colline royale à la Grande Enceinte, avec à chaque arrêt la photo du lieu aujourd'hui.">
+  <meta name="theme-color" content="#1b1712">
+  <link rel="icon" href="data:,">
+  <style>html,body{color:#efe6d6;background:#1b1712;height:100%;margin:0}</style>
+  <script type="module" crossorigin src="./js/visite-Bx1DfZCN.js"></script>
+  <link rel="modulepreload" crossorigin href="./js/three.core-CVy_Bt7O.js">
+  <link rel="modulepreload" crossorigin href="./js/materiaux-DYxdb_rv.js">
+  <link rel="modulepreload" crossorigin href="./js/terrain-DPNdtQDx.js">
+  <link rel="modulepreload" crossorigin href="./js/BufferGeometryUtils-B7tLG3_J.js">
+  <link rel="modulepreload" crossorigin href="./js/meshopt_decoder.module-1NNRkfu7.js">
+  <link rel="modulepreload" crossorigin href="./js/colline-BiY83xv6.js">
+  <link rel="modulepreload" crossorigin href="./js/enceinte--bWpmBLA.js">
+  <link rel="modulepreload" crossorigin href="./js/implantation-BTVW8z_O.js">
+  <link rel="modulepreload" crossorigin href="./js/vegetation-DfmXyped.js">
+  <link rel="stylesheet" crossorigin href="./js/visite-tC3ou7wO.css">
+</head>
+<body>
+  <div id="scene"></div>
+  <noscript><p style="padding: 32px; font: 17px/1.5 system-ui, sans-serif;">La visite du Grand Zimbabwe a besoin de JavaScript et de WebGL pour s'afficher.</p></noscript>
+  <script>
+    // Si le script de la visite ne se charge pas (réseau, navigateur trop ancien), un message remplace l'écran vide.
+    (function () {
+      function secours() {
+        if (document.querySelector('.hud') || document.getElementById('secours')) return;
+        var p = document.createElement('p');
+        p.id = 'secours';
+        p.style.cssText = 'margin: 0; padding: 32px; max-width: 52ch; font: 17px/1.5 system-ui, sans-serif;';
+        p.textContent = "La visite du Grand Zimbabwe n'a pas pu se charger. Rechargez la page, ou essayez un navigateur récent (Chrome, Edge, Firefox ou Safari).";
+        document.body.appendChild(p);
+      }
+      addEventListener('error', function (e) { var t = e.target; if (t && (t.tagName === 'SCRIPT' || t.tagName === 'LINK')) secours(); }, true);
+      setTimeout(secours, 30000);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "tailleMetres": 4,
+  "source": "https://polyhaven.com/a/baseball_playground",
+  "auteur": "Guillaume Monsergent (Poly Haven)",
+  "licence": "CC0 1.0",
+  "sourcesSecondaires": [
+    {
+      "source": "https://polyhaven.com/a/grass_ground",
+      "auteur": "Charlotte Baglioni (Poly Haven)",
+      "licence": "CC0 1.0",
+      "usage": "herbe rase mêlée à la terre"
+    }
+  ],
+  "resolution": 1024,
+  "retouche": "sable tassé recoloré en orange-brun (arène granitique des chemins, photo 10), mêlé (≈ 20 %, plaques fondues) à de l'herbe rase recolorée en paille"
+}

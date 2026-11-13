@@ -1,0 +1,9 @@
+import{Qi as e,mr as t,qt as n,ro as r}from"./three.core-CVy_Bt7O.js";import{n as i,t as a}from"./meshopt_decoder.module-1NNRkfu7.js";var o={releveOmbres:2.2,seuilOmbres:.15,desaturation:.15,teinte:[.92,1,1.15],relief:.6};function s(e,n){let i=new t({map:e,roughness:1,metalness:0});return n.relief>0&&(i.bumpMap=e,i.bumpScale=n.relief),i.onBeforeCompile=e=>{Object.assign(e.uniforms,{releveOmbres:{value:n.releveOmbres},seuilOmbres:{value:n.seuilOmbres},desaturation:{value:n.desaturation},teinteColline:{value:new r(...n.teinte)}}),i.userData.uniforms=e.uniforms,e.fragmentShader=e.fragmentShader.replace(`void main() {`,`uniform float releveOmbres, seuilOmbres, desaturation;
+uniform vec3 teinteColline;
+void main() {`).replace(`#include <map_fragment>`,`#include <map_fragment>
+	{
+		float l = dot( diffuseColor.rgb, vec3( 0.2126, 0.7152, 0.0722 ) );
+		float ombre = 1.0 - smoothstep( 0.0, seuilOmbres, l );
+		vec3 c = mix( diffuseColor.rgb, vec3( l ), desaturation * ( 0.5 + 0.5 * ombre ) );
+		diffuseColor.rgb = c * mix( 1.0, releveOmbres, ombre ) * teinteColline;
+	}`)},i.customProgramCacheKey=()=>`colline-photo`,i}async function c(t,{niveau:r=`bureau`,reglages:c={}}={}){let l=`assets/modeles/`,u=new i().setMeshoptDecoder(a),[d,f]=await Promise.all([u.loadAsync(`${l}colline-${r}.glb`),fetch(`${l}colline-info.json`).then(e=>e.json())]),p={...o,...c},m=Math.min(8,t?.capabilities?.getMaxAnisotropy?.()??1),h={},g=0;d.scene.traverse(t=>{if(!t.isMesh)return;let n=t.material.map;n.anisotropy=m,n.colorSpace=e,t.material.dispose(),t.name=t.material.name,t.material=h[t.name]=s(n,p),t.castShadow=t.receiveShadow=!0,t.geometry.computeBoundingSphere(),g+=t.geometry.index.count/3});let _=new n;return _.name=`colline`,_.add(d.scene),{groupe:_,info:{...f,niveau:r,triangles:g,materiaux:h}}}export{c as n,o as t};

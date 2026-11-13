@@ -1,0 +1,16 @@
+{
+  "tailleMetres": 1,
+  "source": "https://polyhaven.com/a/rock_08",
+  "auteur": "Rob Tuytel (Poly Haven)",
+  "licence": "CC0 1.0",
+  "sourcesSecondaires": [
+    {
+      "source": "https://polyhaven.com/a/lichen_rock",
+      "auteur": "Rico Cilliers (Poly Haven)",
+      "licence": "CC0 1.0",
+      "usage": "forme des plaques de lichen"
+    }
+  ],
+  "resolution": 1024,
+  "retouche": "grain de rock_08 ramené au gris clair du granite (taches de plus de 12 cm aplanies), patine ocre, lichens gris-vert et orangés dessinés sur la forme des lichens de lichen_rock ; rugosité ramenée à 0,72–0,95. Taille réelle de rock_08 : 1,5 m, posée ici à 1 m (grain plus fin, à l'échelle des moellons)."
+}

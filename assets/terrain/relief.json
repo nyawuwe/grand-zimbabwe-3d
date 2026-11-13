@@ -1,0 +1,180 @@
+{
+ "attribution": "Mapzen ; SRTM data courtesy of the U.S. Geological Survey ; relief et orthophoto du site : Löwenborg et Mtetwa, Université d'Uppsala, CC BY 4.0",
+ "sources": [
+  {
+   "titre": "Great Zimbabwe : relief (GZ_valley_dem_wgs84.tif) et orthophoto (GZ_Valley_Orthophoto_wgs84.jpg), relevé par drone de juillet 2016",
+   "auteur": "Daniel Löwenborg et Ezekia Mtetwa (Université d'Uppsala)",
+   "licence": "CC BY 4.0",
+   "source": "https://zenodo.org/records/22830280"
+  },
+  {
+   "titre": "AWS Terrain Tiles (Terrarium), z13 x 4797–4801 y 4565–4569 (25 tuiles) et z11 x 1198–1201 y 1139–1143 (20 tuiles)",
+   "auteur": "Mapzen ; SRTM data courtesy of the U.S. Geological Survey",
+   "licence": "Données libres d'usage avec attribution obligatoire",
+   "licenceUrl": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+   "source": "https://registry.opendata.aws/terrain-tiles/"
+  }
+ ],
+ "traitement": "Sol nu tiré du modèle de surface Zenodo (19 cm) : filtre morphologique progressif (Pingel et al. 2013), arbres, murs, toits et bosquets repérés aussi par l'orthophoto, trous comblés en harmonique ; bosses et creux de moins de 5 m écrêtés à 0,15 m et touffes d'herbe lissées (σ 1,5 m) hors de la roche ; grille de 1 m. Au-delà du relevé : SRTM ramené au relevé (écart en plan 102.1 + 0.00253 x + 0.08200 z, résidu médian 2.5 m), fondu de 15 à 120 m du bord. Couleur du sol : orthophoto sans arbres, murs, toits ni ombres (comblée par les sols voisins), lissée.",
+ "repere": "y = altitude − ALTITUDE_ORIGINE (src/repere.js) ; grille fine dans le repère Zenodo, grilles proche et lointaine dans le repère redressé (voir bascule)",
+ "ordre": "index = i + j × nx ; i selon +x (est), j selon +z (sud) ; nœud (i, j) en (x0 + i × pas, z0 + j × pas)",
+ "encodage": "Uint16 quantifié (y = min + q × quantum), résidu de la prédiction plane (gauche + haut − coin) modulo 65536, plan des octets bas puis plan des octets hauts, compressé zlib (DecompressionStream « deflate »)",
+ "grilles": {
+  "sol": {
+   "fichier": "sol.bin",
+   "x0": -528,
+   "z0": -960,
+   "nx": 1177,
+   "nz": 1225,
+   "pas": 1.0,
+   "min": -46.975,
+   "quantum": 0.005,
+   "erreurMax": 0.0025
+  },
+  "proche": {
+   "fichier": "proche.bin",
+   "x0": -4512,
+   "z0": -4512,
+   "nx": 377,
+   "nz": 377,
+   "pas": 24.0,
+   "min": -255.97,
+   "quantum": 0.01,
+   "erreurMax": 0.005
+  },
+  "lointain": {
+   "fichier": "lointain.bin",
+   "x0": -16512,
+   "z0": -16512,
+   "nx": 345,
+   "nz": 345,
+   "pas": 96.0,
+   "min": -424.46,
+   "quantum": 0.02,
+   "erreurMax": 0.01
+  }
+ },
+ "bascule": {
+  "a": 102.10798180452116,
+  "b": 0.002533376506905091,
+  "c": 0.08200405512157126,
+  "residuMedian": 2.5096295436858114,
+  "residuP95": 6.818801656890121,
+  "noeuds": 1952,
+  "ecartMedianBrut": 74.37356080010068,
+  "ecartAbsoluMedianBrut": 23.665056273818664,
+  "pli": {
+   "centre": [
+    50.0,
+    -350.0
+   ],
+   "fondu": [
+    900.0,
+    4000.0
+   ]
+  },
+  "note": "altitude vraie (SRTM) ≈ altitude Zenodo + a + b x + c z ; terrain.js plie les grilles proche et lointaine de (b x + c z) × (1 − lisse(fondu, distance au centre)) pour rejoindre le repère Zenodo, ou redresse la grille fine (option redresser)"
+ },
+ "couleur": {
+  "fichier": "couleur.jpg",
+  "x0": -528,
+  "z0": -960,
+  "nx": 1177,
+  "nz": 1225,
+  "note": "sRGB, 1 m par pixel, centres des pixels sur les nœuds de la grille fine"
+ },
+ "couches": {
+  "fichier": "couches.png",
+  "x0": -528,
+  "z0": -960,
+  "pas": 2,
+  "nx": 589,
+  "nz": 613,
+  "canaux": "R roche (granite affleurant), V terre nue (chemins), B présence du relevé (fondu vers le lointain)"
+ },
+ "arbres": {
+  "fichier": "arbres.bin",
+  "nombre": 6836,
+  "format": "8 octets : Int16 x, Int16 z (dm) ; Uint8 hauteur, Uint8 rayon du houppier (quarts de m) ; Uint8 drapeaux (1 roche à moins de 5 m, 2 colline, 4 vallée habitée vers 1350) ; 1 octet libre",
+  "habite": [
+   [
+    -300.0,
+    -440.0
+   ],
+   [
+    -120.0,
+    -470.0
+   ],
+   [
+    120.0,
+    -470.0
+   ],
+   [
+    330.0,
+    -440.0
+   ],
+   [
+    430.0,
+    -330.0
+   ],
+   [
+    420.0,
+    -150.0
+   ],
+   [
+    300.0,
+    -60.0
+   ],
+   [
+    180.0,
+    60.0
+   ],
+   [
+    120.0,
+    140.0
+   ],
+   [
+    0.0,
+    150.0
+   ],
+   [
+    -120.0,
+    110.0
+   ],
+   [
+    -250.0,
+    20.0
+   ],
+   [
+    -330.0,
+    -120.0
+   ],
+   [
+    -340.0,
+    -300.0
+   ]
+  ]
+ },
+ "mesures": {
+  "partSolVu": 0.82,
+  "partArbres": 0.139,
+  "partMursBas": 0.049,
+  "solVuEcart": {
+   "median": 0.041,
+   "p95": 0.363
+  },
+  "retireEcart": {
+   "median": 0.58,
+   "p99": 12.8
+  }
+ },
+ "fichiers": {
+  "sol.bin": 936057,
+  "proche.bin": 165234,
+  "lointain.bin": 149186,
+  "couleur.jpg": 202200,
+  "couches.png": 366950,
+  "arbres.bin": 54688
+ },
+ "poidsTotal": 1874315
+}

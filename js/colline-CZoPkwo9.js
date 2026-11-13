@@ -1,0 +1,1 @@
+export{n as chargerColline}from"./colline-BiY83xv6.js";

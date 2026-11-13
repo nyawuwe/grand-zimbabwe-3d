@@ -1,0 +1,170 @@
+{
+  "id": "colline",
+  "role": "Colline royale (Hill Complex), état du relevé par drone de juillet 2016, recalée dans le repère du site.",
+  "auteur": "Daniel Löwenborg et Ezekia Mtetwa (Université d'Uppsala)",
+  "licence": "CC BY 4.0",
+  "source": "https://zenodo.org/records/22830280",
+  "fichierSource": "hillcomplex_whole_medium.zip (Whole_650.dae, Whole_650.jpg)",
+  "modifications": "recalé sur le relief Zenodo (rotation, échelle, translation), allégé (meshopt), texture réduite et réorganisée en atlas, bord ramené vers le sol sur 12 m et prolongé d’une jupe de 6 m, un abri moderne de la cour de l’enceinte Ouest effacé (géométrie aplatie, texture repeinte) ; à l’affichage, ombres de la photo adoucies et teinte neutralisée (src/scene/colline.js)",
+  "masques": [
+    {
+      "centre": [
+        -64,
+        -607.25
+      ],
+      "rayon": 3.6,
+      "objet": "cône de 2,7 m de haut sur ≈ 5,5 m de diamètre dans la cour basse de l'enceinte Ouest, toit de chaume vu du dessus (fibres rayonnantes autour d'un faîte) : abri ou hutte moderne (non daté, non identifié)",
+      "sommets": 77
+    }
+  ],
+  "recalage": {
+    "methode": "corrélation des hauteurs passe-haut à 1 m (rotation de −20° à +20° par pas de 2°), puis moindres carrés robustes (soft L1) sur l'écart vertical modèle − relief Zenodo, sommets des pentes de moins de 53°",
+    "parametres": {
+      "rotation_deg": [
+        4.6886,
+        0.1572,
+        0.0385
+      ],
+      "echelle": 1.01062,
+      "translation_m": [
+        17.424,
+        95.591,
+        -635.606
+      ],
+      "centre_modele": [
+        243.398,
+        62.17,
+        1091.297
+      ]
+    },
+    "ecarts": {
+      "vertical": {
+        "mediane_abs_m": 0.309,
+        "p90_abs_m": 3.275,
+        "mediane_signee_m": -0.027,
+        "sommets": 327234
+      },
+      "horizontal": {
+        "mediane_m": 0.263,
+        "p90_m": 0.814,
+        "tuiles_24m": 125
+      }
+    }
+  },
+  "zones": {
+    "ouest": {
+      "rect": [
+        -104,
+        -34,
+        -660,
+        -588
+      ],
+      "centre": [
+        -71,
+        -619
+      ],
+      "sol": 118.34
+    },
+    "est": {
+      "rect": [
+        -34,
+        48,
+        -650,
+        -588
+      ],
+      "centre": [
+        9,
+        -612
+      ],
+      "sol": 119.82
+    }
+  },
+  "atlas": {
+    "ouest": {
+      "echelle": 0.9,
+      "texelsParMetre": 30.2,
+      "cartes": 121,
+      "aire3D_m2": 8998
+    },
+    "est": {
+      "echelle": 0.76,
+      "texelsParMetre": 25.5,
+      "cartes": 221,
+      "aire3D_m2": 11837
+    }
+  },
+  "niveaux": {
+    "bureau": {
+      "fichier": "assets/modeles/colline-bureau.glb",
+      "octets": 11035856,
+      "triangles": 300000,
+      "primitives": [
+        {
+          "nom": "colline",
+          "triangles": 220836,
+          "sommets": 137099,
+          "texture": "globale 2.74 Mo"
+        },
+        {
+          "nom": "ouest",
+          "triangles": 33674,
+          "sommets": 19167,
+          "texture": "ouest 2.86 Mo"
+        },
+        {
+          "nom": "est",
+          "triangles": 45490,
+          "sommets": 26519,
+          "texture": "est 2.79 Mo"
+        }
+      ]
+    },
+    "telephone": {
+      "fichier": "assets/modeles/colline-telephone.glb",
+      "octets": 3341684,
+      "triangles": 99986,
+      "primitives": [
+        {
+          "nom": "colline",
+          "triangles": 60406,
+          "sommets": 45055,
+          "texture": "globale 0.76 Mo"
+        },
+        {
+          "nom": "ouest",
+          "triangles": 16836,
+          "sommets": 10547,
+          "texture": "ouest 0.79 Mo"
+        },
+        {
+          "nom": "est",
+          "triangles": 22744,
+          "sommets": 14758,
+          "texture": "est 0.76 Mo"
+        }
+      ]
+    }
+  },
+  "emprise": {
+    "fichier": "assets/modeles/colline-emprise.json",
+    "boite": {
+      "x": [
+        -229.15,
+        261.98
+      ],
+      "z": [
+        -761.08,
+        -518.74
+      ],
+      "y": [
+        31.92,
+        152.17
+      ]
+    },
+    "altitudeBord": {
+      "min": 31.94,
+      "max": 117.56,
+      "mediane": 60.19
+    }
+  }
+}

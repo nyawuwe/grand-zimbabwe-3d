@@ -1,0 +1,11 @@
+{
+  "id": "oiseaux",
+  "fichier": "assets/modeles/oiseaux.glb",
+  "triangles": 155879,
+  "poidsKo": 917,
+  "licence": "Création du projet (même licence que la visite)",
+  "auteur": "Visite du Grand Zimbabwe (outils/sculpter-oiseau.mjs)",
+  "source": "outils/sculpter-oiseau.mjs",
+  "role": "Six oiseaux de stéatite de l'enceinte Est, sculptures restituées (champ de distance maillé) d'après Huffman 1995, Dewey 2006, les gravures de Bent (1892) et la photo de Hall et Neal (1902), domaine public. Posés par src/scene/oiseaux.js.",
+  "echelleNote": "oiseau ≈ 33 cm, colonne et oiseau ≈ 1,6 m (Dewey 2006), colonne ≈ 14 cm de diamètre (fragment de Berlin)"
+}
